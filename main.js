@@ -10,7 +10,6 @@ let dx = 0;
 let dy = 0;
 
 body.style.height = main.clientHeight + "px";
-document.getElementById("bg").style.height = main.clientHeight + "px";
 
 window.addEventListener("scroll", scroll);
 
@@ -36,31 +35,66 @@ function lerp(a, b, n) {
   return (1 - n) * a + n * b;
 }
 
+//intersection observer animation function
+
+function observer(id, classList) {
+  const element = document.getElementById(id);
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+
+  const elementObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(classList);
+      } else {
+        entry.target.classList.remove(classList);
+      }
+    });
+  }, options);
+
+  elementObserver.observe(element);
+}
+
 //intersection observer animation
 
-const aboutMe = document.getElementById("about-me");
-const bg = document.getElementById("bg");
-const aboutMeGreetings = document.getElementById("about-me-greetings");
-const aboutMeIntroduce = document.getElementById("about-me-introduce");
+observer("aboutMe", "visible");
+observer("aboutMeGreetings", "visible");
+observer("aboutMeIntroduce", "visible");
+observer("pic", "visiblePic");
 
+//observer for BG animation only
+const bg = document.getElementById("bg");
+const bgAboutMe = document.getElementById("aboutMeGreetings");
 let options = {
   root: null,
   rootMargin: "0px",
-  threshold: 0,
+  threshold: 0.5,
 };
 
-function callbackFunction(entries) {
-  const [entry] = entries;
-  if (entry.isIntersecting) {
-    aboutMe.classList.add("visible");
-    // bg.classList.add("bgtoLeft");
-    // bg.style.transform = `translateX(-70%)`;
-  } else {
-    aboutMe.classList.remove("visible");
-    // bg.style.transform = `translateX(25%)`;
-  }
+const bgObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      bg.style.transform = `translateX(-70%)`;
+    } else {
+      bg.style.transform = `translateX(25%)`;
+      console.log(entry);
+    }
+  });
+}, options);
+
+bgObserver.observe(bgAboutMe);
+
+//pic hover animation
+
+function picMouseOver() {
+  const bg = document.getElementById("bg");
+  bg.style.transform = `translateX(-20%)`;
 }
 
-const observer = new IntersectionObserver(callbackFunction, options);
-
-observer.observe(aboutMe);
+function picMouseOut() {
+  const bg = document.getElementById("bg");
+  bg.style.transform = `translateX(-70%)`;
+}

@@ -123,11 +123,14 @@ meter {
   position: absolute;
   transition: all 1.5s ease-in-out;
   transform: translateX(-200%);
+  height: 200vh;
+  height: 200svh;
 }
 
 #content {
   max-width: 1024px;
   margin: 0 auto;
+  position: relative;
 }
 
 /* Page 1 */
@@ -211,8 +214,8 @@ meter {
   position: relative;
 }
 
-.about-me {
-  margin-top: 40px;
+.aboutMe {
+  top: 10%;
   transition: all 1s ease-in-out;
   color: #ffffff;
   mix-blend-mode: difference;
@@ -224,9 +227,60 @@ meter {
   transform: translateY(50px);
 }
 
-.about-me.visible {
+.aboutMeGreetings {
+  top: 40%;
+  transition: all 1s ease-in-out;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  position: absolute;
+  width: 60%;
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.aboutMeIntroduce {
+  top: 50%;
+  transition: all 1s ease-in-out;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  position: absolute;
+  width: 60%;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.pic {
+  transition: all 1s ease-in-out;
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 1;
+  width: 40%;
+  right: 0;
+  top: 25%;
+  opacity: 0;
+  transform: translateX(50px);
+  mix-blend-mode: difference;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+#picImage {
+  transform: scale(1.5);
+}
+
+.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.visiblePic {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Desktop Media */
@@ -246,5 +300,24 @@ meter {
     mix-blend-mode: difference;
     color: #ffffff;
     font-size: 1.5rem;
+  }
+
+  .aboutMe {
+    font-size: 5rem;
+  }
+
+  .aboutMeGreetings {
+    font-size: 2.5rem;
+  }
+
+  .aboutMeIntroduce {
+    padding: 0 50px;
+    font-size: 1.5rem;
+  }
+
+  .pic {
+    top: 0;
+    height: 100vh;
+    height: 100svh;
   }
 }
