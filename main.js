@@ -48,40 +48,38 @@ function handleMediaQuery(event) {
       requestAnimationFrame(render);
     }
   }
+
+  //intersection observer for min-width 768px
+
+  queryObserver(".hide-left", "reveal");
+  queryObserver(".hide-right", "reveal");
 }
 handleMediaQuery(mediaQuery);
 mediaQuery.addEventListener("change", handleMediaQuery);
 
-//intersection observer animation function
+//global function for intersection observer
+function queryObserver(query, classToggle) {
+  const observing = document.querySelectorAll(query);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle(classToggle, entry.isIntersecting);
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-function observer(id, classList) {
-  const element = document.getElementById(id);
-
-  let options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  };
-
-  const elementObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(classList);
-      } else {
-        entry.target.classList.remove(classList);
-      }
-    });
-  }, options);
-
-  elementObserver.observe(element);
+  observing.forEach((observing) => {
+    observer.observe(observing);
+  });
 }
 
-//intersection observer animation
-
-observer("aboutMe", "visible");
-observer("aboutMeGreetings", "visible");
-observer("aboutMeIntroduce", "visible");
-observer("pic", "visiblePic");
+queryObserver(".aboutMe", "visible");
+queryObserver(".aboutMeGreetings", "visible");
+queryObserver(".aboutMeIntroduce", "visible");
+queryObserver(".pic", "visible");
+queryObserver(".left-work-container", "visible");
+queryObserver(".right-work-container", "visible");
 
 //observer for BG animation only
 const bg = document.getElementById("bg");
