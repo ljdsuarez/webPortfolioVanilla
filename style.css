@@ -223,8 +223,7 @@ meter {
   mix-blend-mode: difference;
   position: absolute;
   width: 40%;
-  text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   opacity: 0;
   transform: translateX(-50px);
   left: 10%;
@@ -285,9 +284,8 @@ meter {
 }
 
 #works {
-  width: 100%;
-  font-size: 2.5rem;
-  text-align: center;
+  width: 80%;
+  font-size: 3rem;
   margin: 50px 0;
 }
 
