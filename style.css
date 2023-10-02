@@ -110,11 +110,12 @@ meter {
 
 #main {
   font-family: "Montserrat", sans-serif;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 #bg {
@@ -133,12 +134,15 @@ meter {
   position: relative;
 }
 
+.pages {
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+}
+
 /* Page 1 */
 
 #page1 {
-  width: 100%;
-  height: 100vh;
-  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,9 +212,6 @@ meter {
 /* Page 2 */
 
 #page2 {
-  height: 100vh;
-  height: 100svh;
-  width: 100%;
   position: relative;
 }
 
@@ -220,11 +221,12 @@ meter {
   color: #ffffff;
   mix-blend-mode: difference;
   position: absolute;
-  width: 60%;
+  width: 40%;
   text-align: center;
   font-size: 2.5rem;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateX(-50px);
+  left: 10%;
 }
 
 .aboutMeGreetings {
@@ -237,7 +239,7 @@ meter {
   text-align: center;
   font-size: 1.5rem;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateX(-50px);
 }
 
 .aboutMeIntroduce {
@@ -250,7 +252,7 @@ meter {
   text-align: center;
   font-size: 1rem;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateX(-50px);
 }
 
 .pic {
@@ -275,7 +277,7 @@ meter {
 
 .visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .visiblePic {
@@ -283,9 +285,35 @@ meter {
   transform: translateX(0);
 }
 
+/* Page 3 */
+
+#page3 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#works {
+  width: 100%;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 50px;
+}
+
 /* Desktop Media */
 
 @media (min-width: 768px) {
+  #main {
+    font-family: "Montserrat", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  /* Page 1 */
+
   .name {
     font-size: 5rem;
     width: 50%;
@@ -302,12 +330,15 @@ meter {
     font-size: 1.5rem;
   }
 
+  /* Page 2 */
   .aboutMe {
     font-size: 5rem;
+    left: 0;
+    width: 60%;
   }
 
   .aboutMeGreetings {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .aboutMeIntroduce {
@@ -319,5 +350,108 @@ meter {
     top: 0;
     height: 100vh;
     height: 100svh;
+  }
+
+  /* Page 3 */
+
+  #page3 {
+    border-bottom: 1px #000000 solid;
+    overflow: hidden;
+  }
+
+  #works {
+    font-size: 5rem;
+  }
+
+  #works-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #left-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  #vertical-line {
+    width: 1px;
+    background-color: #000000;
+    margin: 0 1px;
+  }
+  #right-container {
+    width: 50%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-work-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hide-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: all 2.5s ease-in-out;
+    z-index: 2;
+  }
+
+  .hide-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: all 2.5s ease-in-out;
+    z-index: 2;
+  }
+
+  .reveal {
+    width: 0%;
+  }
+
+  .image-container {
+    width: 60%;
+    border: 1px #000000 solid;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .work-image {
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .work-image:hover {
+    transform: translate(0, 0) scale(1);
+  }
+
+  .horizontal-line {
+    width: 40%;
+    height: 1px;
+    background-color: #000000;
+  }
+
+  .right-work-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
   }
 }

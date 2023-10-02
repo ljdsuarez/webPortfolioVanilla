@@ -1,44 +1,62 @@
-//scroll-smoothing
+// Targets viewports at least 768px wide
+const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-const body = document.body;
-const main = document.getElementById("main");
+function handleMediaQuery(event) {
+  if (event.matches) {
+    //scroll-smoothing
 
-let sx = 0;
-let sy = 0;
+    const body = document.body;
+    const main = document.getElementById("main");
 
-let dx = 0;
-let dy = 0;
+    let sx = 0;
+    let sy = 0;
 
-body.style.height = main.clientHeight + "px";
+    let dx = 0;
+    let dy = 0;
 
-window.addEventListener("scroll", scroll);
+    body.style.height = main.clientHeight + "px";
 
-function scroll() {
-  sx = scrollX;
-  sy = scrollY;
+    window.addEventListener("scroll", scroll);
+
+    function scroll() {
+      sx = scrollX;
+      sy = scrollY;
+    }
+
+    requestAnimationFrame(render);
+
+    function render() {
+      dx = lerp(dx, sx, 0.07);
+      dy = lerp(dy, sy, 0.07);
+
+      dx = Math.floor(dx * 100) / 100;
+      dy = Math.floor(dy * 100) / 100;
+
+      main.style.transform = `translate(-${dx}px, -${dy}px)`;
+
+      requestAnimationFrame(render);
+    }
+
+    function lerp(a, b, n) {
+      return (1 - n) * a + n * b;
+    }
+  } else {
+    requestAnimationFrame(render);
+    function render() {
+      document.getElementById("main").style.transform = null;
+
+      requestAnimationFrame(render);
+    }
+  }
 }
-
-requestAnimationFrame(render);
-function render() {
-  dx = lerp(dx, sx, 0.07);
-  dy = lerp(dy, sy, 0.07);
-
-  dx = Math.floor(dx * 100) / 100;
-  dy = Math.floor(dy * 100) / 100;
-
-  main.style.transform = `translate(-${dx}px, -${dy}px)`;
-
-  requestAnimationFrame(render);
-}
-
-function lerp(a, b, n) {
-  return (1 - n) * a + n * b;
-}
+handleMediaQuery(mediaQuery);
+mediaQuery.addEventListener("change", handleMediaQuery);
 
 //intersection observer animation function
 
 function observer(id, classList) {
   const element = document.getElementById(id);
+
   let options = {
     root: null,
     rootMargin: "0px",
@@ -80,7 +98,6 @@ const bgObserver = new IntersectionObserver((entries) => {
       bg.style.transform = `translateX(-70%)`;
     } else {
       bg.style.transform = `translateX(25%)`;
-      console.log(entry);
     }
   });
 }, options);
