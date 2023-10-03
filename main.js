@@ -73,43 +73,5 @@ function queryObserver(query, classToggle) {
     observer.observe(observing);
   });
 }
-
-queryObserver(".aboutMe", "visible");
-queryObserver(".aboutMeGreetings", "visible");
-queryObserver(".aboutMeIntroduce", "visible");
 queryObserver(".pic", "visible");
-queryObserver(".left-work-container", "visible");
-queryObserver(".right-work-container", "visible");
-
-//observer for BG animation only
-const bg = document.getElementById("bg");
-const bgAboutMe = document.getElementById("aboutMeGreetings");
-let options = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.5,
-};
-
-const bgObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      bg.style.transform = `translateX(-70%)`;
-    } else {
-      bg.style.transform = `translateX(25%)`;
-    }
-  });
-}, options);
-
-bgObserver.observe(bgAboutMe);
-
-//pic hover animation
-
-function picMouseOver() {
-  const bg = document.getElementById("bg");
-  bg.style.transform = `translateX(-20%)`;
-}
-
-function picMouseOut() {
-  const bg = document.getElementById("bg");
-  bg.style.transform = `translateX(-70%)`;
-}
+queryObserver(".hider", "reveal");

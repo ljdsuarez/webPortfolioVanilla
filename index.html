@@ -14,113 +14,48 @@
   </head>
   <body>
     <main class="main" id="main">
-      <div class="content" id="content">
-        <div class="bg" id="bg"></div>
-        <div id="page1" class="pages">
-          <!-- page1 content here -->
-          <div class="name" id="laurenz">laurenz</div>
-          <div class="subtitle" id="subtitle">
-            <div class="subtitle-name" id="designer">designer</div>
-            <div class="subtitle-name" id="content-creator">
-              content creator
-            </div>
-          </div>
-          <div class="name" id="julian">julian</div>
-          <!-- page1 content here -->
+      <div class="bg" id="bg"></div>
+      <div id="page1" class="pages">
+        <!-- page1 content here -->
+        <div class="name" id="laurenz">laurenz</div>
+        <div class="subtitle" id="subtitle">
+          <div class="subtitle-name" id="designer">designer</div>
+          <div class="subtitle-name" id="content-creator">content creator</div>
         </div>
-        <div id="page2" class="pages">
-          <!-- page2 content here -->
-          <div id="aboutMe" class="aboutMe">about me</div>
-          <div id="aboutMeGreetings" class="aboutMeGreetings">
-            "Hello There"
-          </div>
-          <div id="aboutMeIntroduce" class="aboutMeIntroduce">
-            "Laurenz Julian, your not so typical content creator and graphic
-            designer, at your service!"
-          </div>
-          <div class="pic" id="pic">
-            <img
-              id="picImage"
-              onmouseover="picMouseOver()"
-              onclick="picMouseOver()"
-              onmouseout="picMouseOut()"
-              src="./public/pic.jpg"
-              alt="About Me Pic"
-            />
-          </div>
-          <!-- page2 content here -->
+        <div class="name" id="julian">julian</div>
+        <!-- page1 content here -->
+      </div>
+      <div id="page2" class="pages">
+        <!-- page2 content here -->
+        <div id="aboutMe" class="aboutMe">
+          <div class="hider"></div>
+          about me
         </div>
-        <div id="page3">
-          <!-- page3 content here -->
-          <div id="page3" class="pages">
-            <div id="works">works</div>
-            <div id="works-container">
-              <div id="left-container">
-                <!-- work entries on left container -->
-                <div class="left-work-container">
-                  <div class="image-container">
-                    <div class="hide-left"></div>
-                    <img src="./public/1a.png" alt="" class="work-image" />
-                  </div>
-                  <div class="horizontal-line"></div>
-                </div>
-                <div class="left-work-container">
-                  <div class="hide-left"></div>
-                  <div class="image-container">
-                    <img src="./public/3a.png" alt="" class="work-image" />
-                  </div>
-                  <div class="horizontal-line"></div>
-                </div>
-                <div class="left-work-container">
-                  <div class="hide-left"></div>
-                  <div class="image-container">
-                    <img src="./public/3.png" alt="" class="work-image" />
-                  </div>
-                  <div class="horizontal-line"></div>
-                </div>
-                <!-- work entries on left container -->
-                <div class="page3-bottom" id="page3-bottom-left">
-                  <div class="hide-left"></div>
-                </div>
-              </div>
-              <div id="vertical-line"></div>
-              <div id="right-container">
-                <!-- work entries on right container -->
-                <div class="right-work-container">
-                  <div class="horizontal-line"></div>
-                  <div class="image-container">
-                    <img src="./public/2a.png" alt="" class="work-image" />
-                  </div>
-                  <div class="hide-right"></div>
-                </div>
-                <div class="right-work-container">
-                  <div class="horizontal-line"></div>
-                  <div class="image-container">
-                    <img src="./public/1.png" alt="" class="work-image" />
-                  </div>
-                  <div class="hide-right"></div>
-                </div>
-                <div class="right-work-container">
-                  <div class="horizontal-line"></div>
-                  <div class="image-container">
-                    <img src="./public/4.png" alt="" class="work-image" />
-                  </div>
-                  <div class="hide-right"></div>
-                </div>
-                <!-- work entries on right container -->
-                <div class="page3-bottom" id="page3-bottom-right">
-                  <div class="hide-right"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- page3 content here -->
+        <div id="aboutMeGreetings" class="aboutMeGreetings">
+          <div class="hider"></div>
+          "Hello There"
         </div>
-        <div id="page4" class="pages">
-          <!-- page4 content here -->
+        <div id="aboutMeIntroduce" class="aboutMeIntroduce">
+          <div class="hider"></div>
+          "Laurenz Julian, your not so typical content creator and graphic
+          designer, at your service!"
+        </div>
+        <div class="pic" id="pic">
+          <img id="picImage" src="./public/pic.jpg" alt="About Me Pic" />
+        </div>
+        <!-- page2 content here -->
+      </div>
+      <div id="page3">
+        <!-- page3 content here -->
+        <div class="works" id="works">
+          <div id="work1"></div>
+        </div>
+        <!-- page3 content here -->
+      </div>
+      <div id="page4" class="pages">
+        <!-- page4 content here -->
 
-          <!-- page4 content here -->
-        </div>
+        <!-- page4 content here -->
       </div>
     </main>
     <script type="application/javascript" src="main.js"></script>
