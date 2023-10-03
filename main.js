@@ -75,3 +75,4 @@ function queryObserver(query, classToggle) {
 }
 queryObserver(".pic", "visible");
 queryObserver(".hider", "reveal");
+queryObserver(".page3", "page3bg");

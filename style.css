@@ -285,17 +285,13 @@ meter {
 
 /* Page 3 */
 
-#page3 {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.page3 {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
 }
 
-#works {
-  width: 100%;
-  font-size: 3rem;
-  margin: 50px 0;
-  text-align: center;
+.page3bg {
+  background-color: #242424;
 }
 
 /* for animation please put always to the last for it to work */
@@ -369,7 +365,7 @@ meter {
 
   /* Page 3 */
 
-  #page3 {
+  /* #page3 {
     overflow: hidden;
-  }
+  } */
 }
