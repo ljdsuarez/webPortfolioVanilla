@@ -66,7 +66,7 @@ function queryObserver(query, classToggle) {
         entry.target.classList.toggle(classToggle, entry.isIntersecting);
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0 }
   );
 
   observing.forEach((observing) => {
@@ -75,4 +75,7 @@ function queryObserver(query, classToggle) {
 }
 queryObserver(".pic", "visible");
 queryObserver(".hider", "reveal");
-queryObserver(".page3", "page3bg");
+queryObserver(".work1", "work1bg");
+queryObserver(".work-title", "visible");
+queryObserver(".work-image", "visible");
+queryObserver(".work2", "work2bg");
