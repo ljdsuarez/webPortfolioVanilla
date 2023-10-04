@@ -156,8 +156,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .pages {
-  height: 100vh;
-  height: 100svh;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -173,6 +172,8 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  height: 100svh;
 }
 
 .name {
@@ -244,6 +245,8 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   justify-content: center;
   padding-left: 20px;
+  height: 100vh;
+  height: 100svh;
 }
 
 .aboutMe {
@@ -359,8 +362,87 @@ body::-webkit-scrollbar-thumb {
 /* Page 4 */
 
 #page4 {
-  height: 100vh;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgCommentary {
+  position: absolute;
+  font-size: 8vw;
+  width: 100%;
+  user-select: none;
+}
+
+.bgText {
+  font-family: "Dela Gothic One", cursive;
+  -webkit-text-stroke: 1px #242424;
+  opacity: 0.5;
+  color: transparent;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  margin-top: -10px;
+}
+
+/*for comments*/
+
+#commentary-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.comment {
+  height: 300px;
+  width: 400px;
+  background-color: #e4e2dd;
+  border: 1px solid #24242475;
+  border-radius: 20px;
+  margin: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.comment-text {
+  margin: 80px 20px 20px 20px;
+  text-align: justify;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
+  transform: scale(0);
+}
+
+.comment-line {
+  height: 1px;
+  width: 0%;
+  background-color: #242424;
+  transition: all 1s ease-in-out;
+  transition-delay: 1.5s;
+  margin-top: 20px;
+}
+
+.comment-author {
+  margin: auto 20px 20px 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 1s;
+  transform: scale(0);
+}
+
+.comment-hider {
+  width: 110%;
+  height: 110%;
+  background-color: #e4e2dd;
+  position: absolute;
+  transition: all 1s ease-in-out;
 }
 
 /* for animation please put always to the last for it to work */
@@ -379,6 +461,14 @@ body::-webkit-scrollbar-thumb {
 
 .reveal {
   width: 0%;
+}
+
+.comment-line-grow {
+  width: 50%;
+}
+
+.grow {
+  transform: scale(1);
 }
 
 /* Desktop Media */
@@ -455,5 +545,20 @@ body::-webkit-scrollbar-thumb {
     height: 400px;
     width: 400px;
     object-fit: contain;
+  }
+
+  /* Page 4 */
+
+  #comment1 {
+    transform: rotate(10deg);
+  }
+  #comment2 {
+    margin-top: 100px;
+    transform: rotate(-5deg);
+  }
+  #comment3 {
+    transform: rotate(-25deg);
+
+    margin: 30px 300px 100px 0px;
   }
 }

@@ -79,3 +79,9 @@ queryObserver(".work1", "work1bg");
 queryObserver(".work-title", "visible");
 queryObserver(".work-image", "visible");
 queryObserver(".work2", "work2bg");
+queryObserver(".comment-line", "comment-line-grow");
+queryObserver(".comment-hider", "reveal");
+queryObserver(".comment-text", "grow");
+queryObserver(".comment-author", "grow");
+
+//page 4 for repeating background
