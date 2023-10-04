@@ -83,5 +83,18 @@ queryObserver(".comment-line", "comment-line-grow");
 queryObserver(".comment-hider", "reveal");
 queryObserver(".comment-text", "grow");
 queryObserver(".comment-author", "grow");
+queryObserver(".contact-line", "contact-line-grow");
+queryObserver(".contact-title", "visible");
+queryObserver(".contact", "visible");
 
 //page 4 for repeating background
+
+const bgCommentary = document.getElementById("bgCommentary");
+const numberOfRepetition = 100;
+
+for (let i = 0; i < numberOfRepetition; i++) {
+  const bgText = document.createElement("div");
+  bgText.innerHTML = "HAVE YOU HEARD?";
+  bgText.setAttribute("class", "bgText");
+  bgCommentary.append(bgText);
+}

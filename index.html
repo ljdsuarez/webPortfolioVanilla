@@ -9,12 +9,16 @@
       href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lilita+One&family=Montserrat&family=Noto+Sans+NKo+Unjoined&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <title>laurenz julian</title>
   </head>
   <body>
     <main class="main" id="main">
+      <!-- navigation-->
+      <div class="navigation"></div>
+      <!-- navigation-->
       <div class="bg" id="bg"></div>
       <div id="page1" class="pages whiteSpace">
         <!-- page1 content here -->
@@ -144,16 +148,7 @@
       <div id="page4" class="pages">
         <!-- page4 content here -->
         <!-- background only -->
-        <div class="bgCommentary" id="bgCommentary">
-          <div class="bgText">HAVE YOU HEARD?</div>
-          <div class="bgText">HAVE YOU HEARD?</div>
-          <div class="bgText">HAVE YOU HEARD?</div>
-          <div class="bgText">HAVE YOU HEARD?</div>
-          <div class="bgText">HAVE YOU HEARD?</div>
-          <div class="bgText">HAVE YOU HEARD?</div>
-          <div class="bgText">HAVE YOU HEARD?</div>
-          <div class="bgText">HAVE YOU HEARD?</div>
-        </div>
+        <div class="bgCommentary" id="bgCommentary"></div>
         <!-- background only -->
         <div id="commentary-container" class="whiteSpace">
           <div class="comment" id="comment1">
@@ -184,9 +179,51 @@
             <div class="comment-line"></div>
             <div class="comment-author">Steph J.</div>
           </div>
+          <div class="comment" id="comment4">
+            <div class="comment-hider"></div>
+            <div class="comment-text">
+              ""Laurenz' social media management skills are top-notch! The way
+              he had crafted and curated content, engaged with the audience, and
+              maintained a consistent brand presence is truly impressive."
+            </div>
+            <div class="comment-line"></div>
+            <div class="comment-author">Liling D.</div>
+          </div>
         </div>
 
         <!-- page4 content here -->
+      </div>
+      <div id="page5" class="pages">
+        <!-- page5 content here -->
+        <div class="contact-container whiteSpace" id="contact-container">
+          <div class="contact-title">LET'S CONNECT</div>
+          <div class="contact-line"></div>
+          <div class="contact-details-container">
+            <div class="contact" id="fb">
+              <box-icon
+                name="facebook"
+                type="logo"
+                class="contact-icon"
+              ></box-icon>
+              <div class="contact-detail-name">Social</div>
+              <div class="contact-detail">fb.com/lureens</div>
+            </div>
+            <div class="contact" id="email">
+              <box-icon name="envelope" class="contact-icon"></box-icon>
+              <div class="contact-detail-name">Email</div>
+              <div class="contact-detail">julsocial.com@gmail.com</div>
+            </div>
+            <div class="contact" id="address">
+              <box-icon name="map" class="contact-icon"></box-icon>
+              <div class="contact-detail-name">Address</div>
+              <div class="contact-detail">
+                General Santos City, Philippines, 9500
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- page5 content here -->
       </div>
     </main>
     <script type="application/javascript" src="main.js"></script>
