@@ -383,6 +383,17 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   text-align: center;
   margin-top: -10px;
+  position: relative;
+}
+
+.bgText-hider {
+  width: 100%;
+  background-color: #e4e2dd;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease-in-out;
+  top: 0;
 }
 
 /*for comments*/
@@ -448,6 +459,10 @@ body::-webkit-scrollbar-thumb {
 
 /* Page 5 */
 
+#page5 {
+  background-color: #242424;
+}
+
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -455,6 +470,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   font-family: "Montserrat", sans-serif;
   height: 100%;
+  color: #e4e2dd;
 }
 
 .contact-title {
@@ -469,7 +485,7 @@ body::-webkit-scrollbar-thumb {
 .contact-line {
   width: 0%;
   height: 1px;
-  background-color: #242424;
+  background-color: #e4e2dd;
   margin: 50px 0;
   transition: all 1s ease-in-out;
 }
@@ -654,11 +670,41 @@ body::-webkit-scrollbar-thumb {
   .contact {
     height: 300px;
   }
+
+  /*nav*/
+  .desktop-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 1rem;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: difference;
+  }
+
+  .nav {
+    color: #e4e2dd;
+    mix-blend-mode: difference;
+    z-index: 10;
+    cursor: pointer;
+    margin: 10px 20px;
+  }
+
+  .nav:hover {
+  }
 }
 
 @media (min-width: 1024px) {
   .comment {
     width: 400px;
     height: 300px;
+  }
+
+  #page5 {
+    height: 100vh;
   }
 }

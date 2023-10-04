@@ -1,21 +1,21 @@
 // Targets viewports at least 768px wide
 const mediaQuery = window.matchMedia("(min-width: 768px)");
 
+//scroll-smoothing
+
+const body = document.body;
+const main = document.getElementById("main");
+
+let sx = 0;
+let sy = 0;
+
+let dx = 0;
+let dy = 0;
+
+body.style.height = main.clientHeight + "px";
+
 function handleMediaQuery(event) {
   if (event.matches) {
-    //scroll-smoothing
-
-    const body = document.body;
-    const main = document.getElementById("main");
-
-    let sx = 0;
-    let sy = 0;
-
-    let dx = 0;
-    let dy = 0;
-
-    body.style.height = main.clientHeight + "px";
-
     window.addEventListener("scroll", scroll);
 
     function scroll() {
@@ -94,7 +94,17 @@ const numberOfRepetition = 100;
 
 for (let i = 0; i < numberOfRepetition; i++) {
   const bgText = document.createElement("div");
+  const bgTextHider = document.createElement("div");
   bgText.innerHTML = "HAVE YOU HEARD?";
   bgText.setAttribute("class", "bgText");
+  bgTextHider.setAttribute("class", "bgText-hider");
   bgCommentary.append(bgText);
+  bgText.append(bgTextHider);
+}
+
+queryObserver(".bgText-hider", "reveal");
+
+function clickToScroll(id) {
+  const offsetTop = document.getElementById(id).offsetTop;
+  window.scrollTo(0, offsetTop);
 }
