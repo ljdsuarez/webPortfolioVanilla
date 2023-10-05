@@ -721,9 +721,9 @@ body::-webkit-scrollbar-thumb {
   .desktop-line-nav-fill {
     width: 100%;
     height: 50%;
-    background-color: #f77878;
+    background-color: #000000;
     border-radius: 99px;
-    box-shadow: 0 0 15px 2px #f77878;
+    box-shadow: 0 0 15px 2px #ffffff;
   }
 
   .desktop-line-nav-container {
@@ -745,7 +745,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .desktop-nav-menu {
-    color: #f77878;
+    color: #ffffff;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
     writing-mode: vertical-rl;
