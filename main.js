@@ -39,6 +39,45 @@ function handleMediaQuery(event) {
       scrollLine.style.height =
         (dy / (main.clientHeight - window.innerHeight)) * 100 + "%";
 
+      //desktop nav
+
+      const navHomePage = document.getElementById("page1").offsetTop;
+      const navProjectsPage = document.getElementById("page3").offsetTop;
+      const navContactsPage = document.getElementById("page5").offsetTop;
+
+      const navHome = document.getElementById("desktop-home");
+      const navProjects = document.getElementById("desktop-projects");
+      const navContacts = document.getElementById("desktop-contacts");
+
+      const navContainer = document.getElementById("desktop-nav-container");
+
+      function toggleNav(nav, before, after) {
+        if (dy >= before && dy < after) {
+          nav.classList.add("visible");
+        } else {
+          nav.classList.remove("visible");
+        }
+      }
+
+      toggleNav(navHome, navHomePage, navProjectsPage);
+      toggleNav(navProjects, navProjectsPage, navContactsPage - 300);
+      toggleNav(navContacts, navContactsPage - 300, main.clientHeight);
+
+      function navMouseOver() {
+        navHome.classList.remove("desktop-nav-menu-hider");
+        navProjects.classList.remove("desktop-nav-menu-hider");
+        navContacts.classList.remove("desktop-nav-menu-hider");
+      }
+
+      function navMouseOut() {
+        navHome.classList.add("desktop-nav-menu-hider");
+        navProjects.classList.add("desktop-nav-menu-hider");
+        navContacts.classList.add("desktop-nav-menu-hider");
+      }
+
+      navContainer.addEventListener("mouseover", navMouseOver);
+      navContainer.addEventListener("mouseout", navMouseOut);
+
       requestAnimationFrame(render);
     }
 
@@ -132,12 +171,3 @@ function scrollToPage(idPage) {
   const offsetTop = document.getElementById(idPage).offsetTop;
   window.scrollTo(0, offsetTop);
 }
-
-//desktop nav
-const navHomePage = document.getElementById("page1");
-const navProjectsPage = document.getElementById("page3");
-const navContactsPage = document.getElementById("page5");
-
-const navHome = document.getElementById("desktop-home");
-const navProjects = document.getElementById("desktop-projects");
-const navContacts = document.getElementById("desktop-contacts");

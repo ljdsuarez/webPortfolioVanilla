@@ -572,38 +572,10 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+/* dekstop nav*/
+
 .desktop-nav-container {
   display: none;
-}
-
-/* for animation please put always to the last for it to work */
-
-.animationContainer {
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.visible {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.reveal {
-  width: 0%;
-}
-
-.comment-line-grow {
-  width: 50%;
-}
-
-.grow {
-  transform: scale(1);
-}
-
-.contact-line-grow {
-  width: 80%;
 }
 
 /* Desktop Media */
@@ -731,6 +703,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    mix-blend-mode: difference;
   }
 
   .desktop-nav-container img {
@@ -762,17 +735,24 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
+    align-items: center;
     justify-content: space-between;
+    height: 80vh;
     width: 30px;
-    mix-blend-mode: difference;
+    position: absolute;
+    overflow: hidden;
+    margin-top: 20px;
   }
 
   .desktop-nav-menu {
     color: #f77878;
-    transform: rotate(-90deg);
-    margin-top: 30px;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
+    writing-mode: vertical-rl;
+  }
+
+  .desktop-nav-menu-hider {
+    transform: translateX(-30px);
   }
 
   .mobile-nav-container {
@@ -789,4 +769,34 @@ body::-webkit-scrollbar-thumb {
   #page5 {
     height: 100vh;
   }
+}
+
+/* for animation please put always to the last for it to work */
+
+.animationContainer {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal {
+  width: 0%;
+}
+
+.comment-line-grow {
+  width: 50%;
+}
+
+.grow {
+  transform: scale(1);
+}
+
+.contact-line-grow {
+  width: 80%;
 }
