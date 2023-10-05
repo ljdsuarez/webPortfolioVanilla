@@ -13,12 +13,59 @@
 
     <link rel="stylesheet" href="style.css" />
     <title>laurenz julian</title>
+    <link rel="icon" href="./public/LJ.svg" />
   </head>
   <body>
     <!-- navigation-->
     <div class="navigation">
-      <div class="desktop-nav">
-        <!-- Make a standard navigation bar for desktop and make it hamburger if on mobile.-->
+      <div class="desktop-nav-container" id="desktop-nav-container">
+        <img src="./public/LJ.svg" alt="logo" id="nav-logo" />
+        <div class="desktop-line-nav-container">
+          <div class="desktop-line-nav">
+            <div class="desktop-line-nav-fill" id="desktop-line-nav-fill"></div>
+          </div>
+          <div class="desktop-nav-menu-container">
+            <div
+              id="desktop-home"
+              class="desktop-nav-menu"
+              onclick="scrollToPage('page1')"
+            >
+              HOME
+            </div>
+            <div
+              id="desktop-projects"
+              class="desktop-nav-menu"
+              onclick="scrollToPage('page3')"
+            >
+              PROJECTS
+            </div>
+            <div
+              id="desktop-contacts"
+              class="desktop-nav-menu"
+              onclick="scrollToPage('page5')"
+            >
+              CONTACTS
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav-container" id="mobile-nav-container">
+        <img src="./public/LJ.svg" alt="logo" id="nav-logo" />
+        <div class="mobile-nav-home mobile-nav" onclick="scrollToPage('page1')">
+          HOME
+        </div>
+        <div
+          class="mobile-nav-projects mobile-nav"
+          onclick="scrollToPage('page3')"
+        >
+          PROJECTS
+        </div>
+        <div
+          class="mobile-nav-contacts mobile-nav"
+          onclick="scrollToPage('page5')"
+        >
+          CONTACTS
+        </div>
       </div>
     </div>
     <!-- navigation-->

@@ -19,6 +19,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-behavior: smooth;
 }
 
 /* Reapply the pointer cursor for anchor tags */
@@ -532,6 +533,49 @@ body::-webkit-scrollbar-thumb {
   width: 80px;
 }
 
+/*navigation*/
+.mobile-nav-container {
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  z-index: 10;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  color: #242424;
+  background-color: #e4e2dd;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(0%);
+}
+
+.mobile-nav-hide {
+  transform: translateY(-110%);
+}
+
+#nav-logo {
+  margin-right: auto;
+}
+
+.mobile-nav {
+  margin: 5px 10px;
+  font-size: 0.8rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.desktop-nav-container {
+  display: none;
+}
+
 /* for animation please put always to the last for it to work */
 
 .animationContainer {
@@ -604,16 +648,19 @@ body::-webkit-scrollbar-thumb {
     font-size: 5rem;
     left: 0;
     height: auto;
+    margin-left: 30px;
   }
 
   .aboutMeGreetings {
     font-size: 3rem;
     height: auto;
+    margin-left: 30px;
   }
 
   .aboutMeIntroduce {
     font-size: 2rem;
     height: auto;
+    margin-left: 30px;
   }
 
   .pic {
@@ -626,6 +673,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 5rem;
     text-align: left;
     width: 100%;
+    padding-left: 50px;
   }
 
   .work-images-container {
@@ -672,29 +720,63 @@ body::-webkit-scrollbar-thumb {
   }
 
   /*nav*/
-  .desktop-nav {
+  .desktop-nav-container {
     position: fixed;
-    right: 0;
-    top: 0;
+    left: 10px;
+    top: 20px;
     font-size: 1rem;
     z-index: 10;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px;
     align-items: center;
+  }
+
+  .desktop-nav-container img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .desktop-line-nav {
+    height: 100%;
+    width: 2px;
+    border-radius: 99px;
+    background-color: #ffffff;
+  }
+
+  .desktop-line-nav-fill {
+    width: 100%;
+    height: 50%;
+    background-color: #f77878;
+    border-radius: 99px;
+    box-shadow: 0 0 15px 2px #f77878;
+  }
+
+  .desktop-line-nav-container {
+    height: 100%;
+    display: flex;
+  }
+
+  .desktop-nav-menu-container {
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    justify-content: space-between;
+    width: 30px;
     mix-blend-mode: difference;
   }
 
-  .nav {
-    color: #e4e2dd;
-    mix-blend-mode: difference;
-    z-index: 10;
+  .desktop-nav-menu {
+    color: #f77878;
+    transform: rotate(-90deg);
+    margin-top: 30px;
+    transition: all 0.5s ease-in-out;
     cursor: pointer;
-    margin: 10px 20px;
   }
 
-  .nav:hover {
+  .mobile-nav-container {
+    display: none;
   }
 }
 

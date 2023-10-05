@@ -34,6 +34,11 @@ function handleMediaQuery(event) {
 
       main.style.transform = `translate(-${dx}px, -${dy}px)`;
 
+      //navigation
+      let scrollLine = document.getElementById("desktop-line-nav-fill");
+      scrollLine.style.height =
+        (dy / (main.clientHeight - window.innerHeight)) * 100 + "%";
+
       requestAnimationFrame(render);
     }
 
@@ -48,11 +53,6 @@ function handleMediaQuery(event) {
       requestAnimationFrame(render);
     }
   }
-
-  //intersection observer for min-width 768px
-
-  queryObserver(".hide-left", "reveal");
-  queryObserver(".hide-right", "reveal");
 }
 handleMediaQuery(mediaQuery);
 mediaQuery.addEventListener("change", handleMediaQuery);
@@ -108,3 +108,36 @@ function clickToScroll(id) {
   const offsetTop = document.getElementById(id).offsetTop;
   window.scrollTo(0, offsetTop);
 }
+
+//mobile scroll hide-show
+
+let lastScollTop = window.scrollY;
+
+window.addEventListener("scroll", function handleScroll() {
+  const scrollTopPosition = window.scrollY;
+
+  if (scrollTopPosition > lastScollTop) {
+    document
+      .getElementById("mobile-nav-container")
+      .classList.add("mobile-nav-hide");
+  } else if (scrollTopPosition < lastScollTop) {
+    document
+      .getElementById("mobile-nav-container")
+      .classList.remove("mobile-nav-hide");
+  }
+  lastScollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+});
+
+function scrollToPage(idPage) {
+  const offsetTop = document.getElementById(idPage).offsetTop;
+  window.scrollTo(0, offsetTop);
+}
+
+//desktop nav
+const navHomePage = document.getElementById("page1");
+const navProjectsPage = document.getElementById("page3");
+const navContactsPage = document.getElementById("page5");
+
+const navHome = document.getElementById("desktop-home");
+const navProjects = document.getElementById("desktop-projects");
+const navContacts = document.getElementById("desktop-contacts");
