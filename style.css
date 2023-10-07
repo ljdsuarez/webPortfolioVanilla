@@ -227,13 +227,13 @@ body::-webkit-scrollbar-thumb {
 #designer {
   width: 48%;
   text-align: end;
-  margin-right: 2%;
+  margin-right: 5px;
   animation: left 1.5s ease-in-out forwards;
 }
 
 #content-creator {
   width: 48%;
-  margin-left: 2%;
+  margin-left: 5px;
   animation: right 1.5s ease-in-out forwards;
 }
 
@@ -339,6 +339,8 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   object-fit: contain;
   width: 80%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .work2bg {
