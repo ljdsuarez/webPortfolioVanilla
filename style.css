@@ -423,6 +423,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .comment-text {
