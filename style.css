@@ -309,57 +309,69 @@ body::-webkit-scrollbar-thumb {
 
 .page3 {
   width: 100%;
-  height: auto;
-}
-
-.work1 {
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-  padding-top: 50px;
-}
-
-.work1bg {
-  background-color: #3e3e3e;
+  background-color: #e4e2dd;
 }
 
 .work-title {
-  color: #e4e2dd;
-  font-family: "Dela Gothic One", cursive;
+  margin: 50px 0;
+  font-size: 5rem;
+  font-weight: 800;
+  width: 100%;
   text-align: center;
-  font-size: 2.5em;
-  transform: translateY(50%);
-  transition: all 500ms linear;
+  color: #242424;
 }
 
-.work-image {
-  margin: 20px 20px;
-  width: 100%;
-  transform: translateY(100%);
-  transition: all 0.5s ease-in-out;
-  opacity: 0;
-  object-fit: contain;
-  width: 80%;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-
-.work2bg {
-  background-color: #9b9e4f;
-}
-
-.work2 {
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-  padding-top: 50px;
-}
-
-.work-images-container {
+.marquee {
+  --gap: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 1em;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  margin-bottom: 50px;
+}
+
+.marquee li {
+  width: 200px;
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+  padding: 30px 0;
+}
+
+.davon {
+  background-color: #242424af;
+}
+
+.davon-content {
+  animation: scroll 10s linear infinite;
+}
+
+.fnp {
+  background-color: #7e803580;
+}
+
+.fnp-content {
+  animation: scroll 25s linear infinite;
+  animation-direction: reverse;
+}
+
+.marquee-hover-pause:hover .marquee__content {
+  animation-play-state: paused;
+  display: flex;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
 /* Page 4 */
@@ -644,21 +656,9 @@ body::-webkit-scrollbar-thumb {
     height: 100svh;
   }
 
-  .work-title {
-    font-size: 5rem;
-    text-align: left;
-    width: 100%;
-    padding-left: 50px;
-  }
-
-  .work-images-container {
-    transform: rotate(-5deg);
-  }
-
-  .work-image {
-    height: 400px;
-    width: 400px;
-    object-fit: contain;
+  /* Page 3 */
+  .marquee li {
+    width: 300px;
   }
 
   /* Page 4 */
@@ -774,11 +774,16 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media (min-width: 1440px) {
+  .marquee li {
+    width: 450px;
+  }
+}
+
 /* for animation please put always to the last for it to work */
 
 .animationContainer {
   height: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
 }
