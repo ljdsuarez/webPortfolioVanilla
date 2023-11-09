@@ -344,15 +344,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 .davon {
-  background-color: #242424af;
+  background-color: #e4e2dd;
 }
 
 .davon-content {
-  animation: scroll 10s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 .fnp {
-  background-color: #7e803580;
+  background-color: #e4e2dd;
 }
 
 .fnp-content {
